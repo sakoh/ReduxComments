@@ -8,11 +8,11 @@ describe('App' , () => {
     component = renderComponent(App);
   });
 
-  it('renders something', () => {
-    expect(component).to.exist;
+  it('shows a comment box', () => {
+    expect(component.find('.comment-box')).to.exist;
   });
 
-  it('shows the correct text', () => {
-    expect(component).to.contain('Redux simple starter')
-  })
+  it('shows a comments list', () => {
+    expect(component.find('.comments-list')).to.exist;
+  });
 });

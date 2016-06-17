@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import CommentBox from './comment_box';
+import CommentsList from './comments_list';
 
 export default class App extends Component {
   render() {
     return (
-      <div>Redux simple starter</div>
+      <div>
+        <CommentBox />
+        <CommentsList />
+      </div>
     );
   }
 }
