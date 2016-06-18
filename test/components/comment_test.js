@@ -7,7 +7,7 @@ describe("Comment" , () => {
   beforeEach(() => {
     comment = "Very Nice article, you made some good points";
     const props ={"comment": comment};
-    component = renderComponent(Comment, null, props);
+    component = renderComponent(Comment, props);
   });
 
   it("should exist", () => {
