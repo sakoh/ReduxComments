@@ -37,7 +37,8 @@ describe("CommentBox" , () => {
     });
 
     it("clears the textarea when comment is submitted", () => {
-
+      component.simulate('submit');
+      expect(textarea).to.have.value("");
     });
 
   });
