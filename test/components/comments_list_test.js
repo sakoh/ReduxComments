@@ -5,7 +5,8 @@ describe('CommentsList' , () => {
   let component;
 
   beforeEach(() => {
-    component = renderComponent(CommentsList);
+    const props = {'comments':['gsds','dsfgjraiujr']}
+    component = renderComponent(CommentsList, props);
   });
 
   it('should exist', () => {
@@ -14,6 +15,10 @@ describe('CommentsList' , () => {
 
   it('has the right class', () => {
     expect(component).to.have.class('comments-list');
+  });
+
+  it('shows all the comments', () => {
+    expect(component.find('li.comment').length).to.equal(2);
   });
 
 });

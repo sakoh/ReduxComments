@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 export default class Comment extends Component {
   render(){
     return (
-      <div className="comment">
-        <span>{this.props.body}</span>
-      </div>
+        <li className="comment">{this.props.body}</li>
     );
   }
 }
