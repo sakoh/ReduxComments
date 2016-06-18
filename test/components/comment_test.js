@@ -1,25 +1,25 @@
-import { renderComponent , expect } from '../test_helper';
-import Comment from '../../src/components/comment';
+import { renderComponent , expect } from "../test_helper";
+import Comment from "../../src/components/comment";
 
-describe('Comment' , () => {
-  let component;
-  let body;
+describe("Comment" , () => {
+  let component, comment;
 
   beforeEach(() => {
-    body = "Very Nice article, you've made some good points";
-    component = renderComponent(Comment, {"body": body});
+    comment = "Very Nice article, you made some good points";
+    const props ={"comment": comment};
+    component = renderComponent(Comment, null, props);
   });
 
-  it('should exist', () => {
+  it("should exist", () => {
     expect(component).to.exist;
   });
 
-  it('has the right class', () => {
-    expect(component).to.have.class('comment');
+  it("has the right class", () => {
+    expect(component).to.have.class("comment");
   });
 
-  // it('has a span with the right comment', () => {
-  //   expect(component.find('span')).to.contain(body);
-  // });
+  it("has the comment from the state", () => {
+    expect(component).to.contain(comment);
+  });
 
 });

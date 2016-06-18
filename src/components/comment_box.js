@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
 export default class CommentBox extends Component {
 
@@ -6,17 +6,17 @@ export default class CommentBox extends Component {
     super(props);
 
     this.state = {
-      'comment':''
+      "comment":""
     }
   }
 
   handleChange(event){
-    this.setState({'comment': event.target.value});
+    this.setState({"comment": event.target.value});
   }
 
   render() {
     return (
-      <div className='comment-box'>
+      <div className="comment-box">
         <textarea
           value={this.state.comment}
           onChange={this.handleChange.bind(this)} />

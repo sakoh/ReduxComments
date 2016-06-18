@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Comment from '../../src/components/comment';
+import React, { Component } from "react";
+import Comment from "../../src/components/comment";
 
 export default class CommentsList extends Component {
 
