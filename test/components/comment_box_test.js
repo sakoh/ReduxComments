@@ -24,12 +24,39 @@ describe("CommentBox" , () => {
     expect(component.find("button")).to.exist;
   });
 
-  describe("entering text", () => {
+  describe("author's name input", () => {
+    let authorInput;
+
+    beforeEach(() => {
+      authorInput = component.find("input.comment-box--author-input");
+      authorInput.simulate("change","John");
+    });
+
+    it("should have the right class",() => {
+      expect(authorInput).to.exist;
+    });
+
+    it("shows text entered in the author's input",() => {
+      expect(authorInput).to.have.value("John");
+    });
+
+    it("clears the textarea when comment is submitted", () => {
+      component.simulate('submit');
+      expect(authorInput).to.have.value("");
+    });
+
+  });
+
+  describe("textarea", () => {
     let textarea;
 
     beforeEach(() => {
-      textarea = component.find("textarea");
+      textarea = component.find("textarea.comment-box--textarea");
       textarea.simulate("change","new comment");
+    });
+
+    it("should have the right class",() => {
+      expect(textarea).to.exist;
     });
 
     it("shows text entered in the textrea",() => {

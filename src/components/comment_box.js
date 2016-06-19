@@ -8,7 +8,9 @@ class CommentBox extends Component {
     super(props);
 
     this.state = {
-      "comment":""
+      "author":"",
+      "body":"",
+      "comment":{}
     }
   }
 
@@ -16,19 +18,46 @@ class CommentBox extends Component {
     event.preventDefault();
 
     this.props.saveComment(this.state.comment);
-    this.setState({"comment":""});
+
+    this.setState({
+      "author":"",
+      "body":""
+    });
+
   }
 
   handleChange(event){
-    this.setState({"comment": event.target.value});
+
+    switch(event.target.className){
+      case "comment-box--author-input":
+        this.setState({"author": event.target.value});
+        break;
+      case "comment-box--textarea":
+        this.setState({"body": event.target.value});
+    }
+
+    this.setState({
+      comment: {
+        "author": this.state.author,
+        "body": this.state.body
+      }
+    });
+
   }
 
   render(){
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
         <h4>Add a Comment</h4>
+        <h6>Enter your name:</h6>
+        <input
+          className="comment-box--author-input"
+          value={this.state.author}
+          onChange={this.handleChange.bind(this)}
+          type="text"/> <hr/>
         <textarea
-          value={this.state.comment}
+          className="comment-box--textarea"
+          value={this.state.body}
           onChange={this.handleChange.bind(this)} /> <br />
         <button action="submit">Submit Comment</button>
       </form>

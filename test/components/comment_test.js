@@ -6,7 +6,12 @@ describe("Comment" , () => {
 
   beforeEach(() => {
     comment = "Very Nice article, you made some good points";
-    const props = {"comment": comment};
+    const props = {
+      "comment": {
+        "author": "John",
+        "body": comment
+      }
+    };
     component = renderComponent(Comment, props);
   });
 
@@ -14,8 +19,12 @@ describe("Comment" , () => {
     expect(component).to.exist;
   });
 
-  it("has the right class", () => {
-    expect(component).to.have.class("comment");
+  it("has the right class for author input", () => {
+    expect(component.find('.comment-author')).to.exist;
+  });
+
+  it("has the right class for author input", () => {
+    expect(component.find('.comment-body')).to.exist;
   });
 
   it("has the comment from the state", () => {

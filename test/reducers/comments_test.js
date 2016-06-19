@@ -9,8 +9,16 @@ describe('CommentsReducer', () => {
   });
 
   it('handles action of type SAVE_COMMENT', () => {
-    const action = { type: SAVE_COMMENT, payload: "new comment" };
+    const payload = {
+      "author": "John",
+      "body": "new comment"
+    };
 
-    expect(commentReducer([], action)).to.eql(['new comment']);
+    const action = {
+      type: SAVE_COMMENT,
+      payload: payload
+    };
+
+    expect(commentReducer([], action)).to.eql([payload]);
   });
 });

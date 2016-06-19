@@ -11,8 +11,16 @@ export default class Comment extends Component {
   }
 
   render(){
+
+    let { author, body } = this.state.comment;
+
     return (
-        <li className="comment" key={this.state.comment}>{this.state.comment}</li>
+        <li className="comment" key={body}>
+          <span className="comment-author" >{author} wrote:</span>
+          <br />
+          <p className="comment-body">{body}</p>
+          <hr/>
+        </li>
     );
   }
 }

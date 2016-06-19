@@ -10,8 +10,13 @@ describe('actions', () => {
     });
 
     it('has the correct payload', () => {
-      const action = saveComment('new comment');
-      expect(action.payload).to.equal('new comment');
+      const payload = {
+        "author": "John",
+        "body": "new comment"
+      };
+      const action = saveComment(payload);
+
+      expect(action.payload).to.equal(payload);
     });
   });
 });

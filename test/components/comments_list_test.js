@@ -5,7 +5,18 @@ describe("CommentsList" , () => {
   let component;
 
  beforeEach(() => {
-   const props = { comments: ['New Comment', 'Other New Comment'] };
+   const props = {
+     comments: [
+       {
+         "author": "John",
+         "body": "Nice Post!"
+       },
+       {
+         "author": "Peter",
+         "body": "You brought up some good points"
+       }
+     ]
+   };
    component = renderComponent(CommentsList, null, props);
  });
 
@@ -14,7 +25,7 @@ describe("CommentsList" , () => {
  });
 
  it('shows each comment that is provided', () => {
-   expect(component).to.contain('New Comment');
-   expect(component).to.contain('Other New Comment');
+   expect(component).to.contain('Nice Post!');
+   expect(component).to.contain('You brought up some good points');
  });
 });
