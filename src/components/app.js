@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <div>
         <CommentBox />
-        <CommentsList comments={["nefd", "asadas"]} />
+        <CommentsList />
       </div>
     );
   }
