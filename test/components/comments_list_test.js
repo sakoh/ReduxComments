@@ -4,21 +4,17 @@ import CommentsList from "../../src/components/comments_list";
 describe("CommentsList" , () => {
   let component;
 
-  beforeEach(() => {
-    const props = {"comments":["gsds","dsfgjraiujr"]};
-    component = renderComponent(CommentsList, props);
-  });
+ beforeEach(() => {
+   const props = { comments: ['New Comment', 'Other New Comment'] };
+   component = renderComponent(CommentsList, null, props);
+ });
 
-  it("should exist", () => {
-    expect(component).to.exist;
-  });
+ it('shows an LI for each comment', () => {
+   expect(component.find('li').length).to.equal(2);
+ });
 
-  it("has the right class", () => {
-    expect(component).to.have.class("comments-list");
-  });
-
-  it("shows all the comments", () => {
-    expect(component.find("li.comment").length).to.equal(2);
-  });
-
+ it('shows each comment that is provided', () => {
+   expect(component).to.contain('New Comment');
+   expect(component).to.contain('Other New Comment');
+ });
 });
