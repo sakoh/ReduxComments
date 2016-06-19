@@ -12,7 +12,7 @@ export default class Comment extends Component {
 
   render(){
     return (
-        <li className="comment">{this.state.comment}</li>
+        <li className="comment" key={this.state.comment}>{this.state.comment}</li>
     );
   }
 }

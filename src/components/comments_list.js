@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Comment from "./comment";
 import { connect } from "react-redux";
 
 class CommentsList extends Component {
@@ -12,7 +13,7 @@ class CommentsList extends Component {
 
   render(){
     const list = this.state.comments.map((comment) => (
-      <li key={comment}>{comment}</li>
+      <Comment comment={comment} />
     ));
 
     return (
