@@ -6,13 +6,10 @@ class CommentsList extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      "comments": this.props.comments
-    }
   }
 
   render(){
-    const list = this.state.comments.map((comment) => (
+    const list = this.props.comments.map((comment) => (
       <Comment comment={comment} />
     ));
 
