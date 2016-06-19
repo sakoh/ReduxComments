@@ -23,7 +23,7 @@ class CommentBox extends Component {
     this.setState({"comment": event.target.value});
   }
 
-  render() {
+  render(){
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
         <h4>Add a Comment</h4>

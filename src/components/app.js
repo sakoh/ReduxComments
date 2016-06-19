@@ -3,7 +3,7 @@ import CommentBox from "./comment_box";
 import CommentsList from "./comments_list";
 
 export default class App extends Component {
-  render() {
+  render(){
     return (
       <div>
         <CommentBox />
