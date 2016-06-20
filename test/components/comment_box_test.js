@@ -32,11 +32,11 @@ describe("CommentBox" , () => {
       authorInput.simulate("change","John");
     });
 
-    it("should have the right class",() => {
+    it("should have the right class", () => {
       expect(authorInput).to.exist;
     });
 
-    it("shows text entered in the author's input",() => {
+    it("shows text entered in the author's input", () => {
       expect(authorInput).to.have.value("John");
     });
 
@@ -55,11 +55,11 @@ describe("CommentBox" , () => {
       textarea.simulate("change","new comment");
     });
 
-    it("should have the right class",() => {
+    it("should have the right class", () => {
       expect(textarea).to.exist;
     });
 
-    it("shows text entered in the textrea",() => {
+    it("shows text entered in the textrea", () => {
       expect(textarea).to.have.value("new comment");
     });
 

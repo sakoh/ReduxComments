@@ -34,6 +34,7 @@ class CommentBox extends Component {
         break;
       case "comment-box--textarea":
         this.setState({"body": event.target.value});
+        break;
     }
 
     this.setState({
