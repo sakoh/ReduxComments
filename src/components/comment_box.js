@@ -11,7 +11,7 @@ class CommentBox extends Component {
       "author":"",
       "body":"",
       "comment":{}
-    }
+    };
   }
 
   handleSubmit(event){
@@ -49,13 +49,14 @@ class CommentBox extends Component {
   render(){
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
-        <h4>Add a Comment</h4>
+        <h4>Comment Form</h4>
         <h6>Enter your name:</h6>
         <input
           className="comment-box--author-input"
           value={this.state.author}
           onChange={this.handleChange.bind(this)}
-          type="text"/> <hr/>
+          type="text"/>
+        <h6>Add a Comment</h6>
         <textarea
           className="comment-box--textarea"
           value={this.state.body}
