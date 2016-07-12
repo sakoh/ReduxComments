@@ -29,10 +29,10 @@ class CommentBox extends Component {
   handleChange(event){
 
     switch(event.target.className){
-      case "comment-box--author-input":
+      case "comment-box--author-input form-control":
         this.setState({"author": event.target.value});
         break;
-      case "comment-box--textarea":
+      case "comment-box--textarea form-control":
         this.setState({"body": event.target.value});
         break;
     }
