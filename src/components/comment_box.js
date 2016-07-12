@@ -50,18 +50,22 @@ class CommentBox extends Component {
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
         <h4>Comment Form</h4>
-        <h6>Enter your name:</h6>
-        <input
-          className="comment-box--author-input"
-          value={this.state.author}
-          onChange={this.handleChange.bind(this)}
-          type="text"/>
-        <h6>Add a Comment</h6>
-        <textarea
-          className="comment-box--textarea"
-          value={this.state.body}
-          onChange={this.handleChange.bind(this)} /> <br />
-        <button action="submit">Submit Comment</button>
+        <fieldset class="form-group">
+          <label for="name">Name</label>
+          <input
+            className="comment-box--author-input form-control"
+            value={this.state.author}
+            onChange={this.handleChange.bind(this)}
+            type="text"/>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="comment">Comment</label>
+          <textarea
+            className="comment-box--textarea form-control"
+            value={this.state.body}
+            onChange={this.handleChange.bind(this)} /> <br />
+        </fieldset>
+        <button action="submit" className="btn btn-primary">Submit Comment</button>
       </form>
     );
   }
